@@ -1,5 +1,4 @@
-# processwire-phpstorm-live-templates
-ProcessWire Live Templates for PhpStorm
+# ProcessWire Live Templates for PhpStorm
 
 How to:
 
