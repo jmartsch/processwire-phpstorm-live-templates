@@ -1,0 +1,51 @@
+<templateSet group="ProcessWire">
+  <template name="pw" value="&lt;?php namespace ProcessWire;" description="adds ProcessWire namespace" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="pwmodule" value="class $Classname$ extends WireData implements Module, ConfigurableModule {&#10;&#10;  public static function getModuleInfo() {&#10;    return [&#10;      'title' =&gt; '$Classname$',&#10;      'version' =&gt; '0.0.1',&#10;      'summary' =&gt; '$summary$',&#10;      'autoload' =&gt; $autoload$,&#10;      'singular' =&gt; false,&#10;      'icon' =&gt; 'smile-o',&#10;      'requires' =&gt; [],&#10;      'installs' =&gt; [],&#10;    ];&#10;  }&#10;&#10;  public function init() {&#10;  }&#10;&#10;  /**&#10;  * Config inputfields&#10;  * @param InputfieldWrapper $inputfields&#10;  */&#10;  public function getModuleConfigInputfields($inputfields) {&#10;    return $inputfields;&#10;  }&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="Classname" expression="" defaultValue="yourModuleName" alwaysStopAt="true" />
+    <variable name="summary" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="autoload" expression="enum(&quot;true&quot;,&quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="rmmigrate" value="$rm-&gt;migrate([&#10;  'fields' =&gt; [],&#10;  'templates' =&gt; [],&#10;]);" description="" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="rm" value="/** @var RockMigrations $rm */&#10;$rm = $this-&gt;wire-&gt;modules-&gt;get('RockMigrations');&#10;$rm-&gt;$END$" description="add RockMigrations Module" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="rmtext" value="'$fieldname$' =&gt; [&#10;  'type' =&gt; 'text',&#10;  'label' =&gt; '$label$',&#10;  'icon' =&gt; 'align-left',&#10;]," description="add migrations for a text field" toReformat="true" toShortenFQNames="true">
+    <variable name="fieldname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="label" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="rmpage" value="'$fieldname$' =&gt; [&#10;  'type' =&gt; 'page',&#10;  'label' =&gt; '$label$',&#10;  'derefAsPage' =&gt; FieldtypePage::derefAsPageArray,&#10;  'inputfield' =&gt; 'InputfieldSelect',&#10;  'findPagesSelector' =&gt; 'id&gt;0,template!=admin$END$',&#10;  'labelFieldName' =&gt; 'title',&#10;]," description="adds a migration for a page reference field" toReformat="true" toShortenFQNames="true">
+    <variable name="fieldname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="label" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="rmgetmodule" value="/** @var $modulename$ $ */&#10;$name$ = $this-&gt;wire-&gt;modules-&gt;get('$modulename$');&#10;$END$" description="gets a ProcessWire module" toReformat="true" toShortenFQNames="true">
+    <variable name="modulename" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Expression" value="true" />
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+</templateSet>
